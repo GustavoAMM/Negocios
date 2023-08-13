@@ -37,7 +37,6 @@ export function Admin() {
         }, 1500);
       }
     } catch (error) {
-      console.error('Error during login:', error);
       setLoginSuccess(false);
       setTimeout(() => {
         setLoginSuccess(null);

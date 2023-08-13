@@ -1,3 +1,1 @@
-module.exports = [
-
-];
+module.exports = [{"name":"Example","address":"Calle Amapolas","phone":"4421234312","email":"admin@gmail.com","deliveryDate":"2023-08-14","paymentMethod":"efectivo","product":"Mesa rectangular","quantity":1,"status":"Pendiente","id":72269}]

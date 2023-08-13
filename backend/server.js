@@ -45,7 +45,6 @@ app.post("/add-order", (req, res) => {
       .status(200)
       .json({ success: true, message: "Order added successfully.", id: uniqueId });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ success: false, message: "Error adding order." });
   }
 });

@@ -26,6 +26,8 @@ export function Home() {
   const [showAlert, setShowAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  // alerta de campos vacios
+  const [showAlertCampos, setShowAlertCampos] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     address: "",
@@ -60,7 +62,6 @@ export function Home() {
 
   const handleSubmit = async () => {
     try {
-      // Realiza una validación para verificar que todos los campos requeridos estén completos
       if (
         formData.name === "" ||
         formData.address === "" ||
@@ -69,10 +70,8 @@ export function Home() {
         formData.deliveryDate === "" ||
         formData.paymentMethod === "" || 
         formData.product === ""
-
-      ) {
-        // Si algún campo está vacío, muestra una alerta o realiza alguna acción
-        console.log("Completa todos los campos requeridos");
+      ){
+        setShowAlertCampos(true);
         return;
       }
 
@@ -111,6 +110,16 @@ export function Home() {
     }
     return () => clearTimeout(alertTimer);
   }, [showErrorAlert]);
+
+  useEffect(() => {
+    let alertTimer;
+    if (showAlertCampos) {
+      alertTimer = setTimeout(() => {
+        setShowAlertCampos(false);
+      }, 1000);
+    }
+    return () => clearTimeout(alertTimer);
+  }, [showAlertCampos]);
 
   return (
     <div
@@ -161,6 +170,18 @@ export function Home() {
           </div>
           <div className="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
             <p className="text-sm">Ha ocurrido un error. Inténtalo de nuevo.</p>
+          </div>
+        </div>
+      )}
+
+      {/* Alerta de campos vacios */}
+      {showAlertCampos && (
+        <div className="fixed top-0 right-0 m-8">
+          <div className="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+            Error
+          </div>
+          <div className="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+            <p className="text-sm">Por favor, completa todos los campos.</p>
           </div>
         </div>
       )}

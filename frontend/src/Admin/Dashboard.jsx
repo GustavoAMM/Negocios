@@ -23,14 +23,11 @@ export function Dashboard() {
       .then((data) => {
         if (data.success) {
           setOrders(data.orders);
-          console.log("Datos de pedidos obtenidos:", data.orders); // Agregado
         } else {
-          console.error("Error al obtener los pedidos:", data.message);
         }
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error al obtener los pedidos:", error);
         setLoading(false);
       });
   }, []);
