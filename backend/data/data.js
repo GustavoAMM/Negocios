@@ -1,18 +1,1 @@
-module.exports = [
-  {
-    name: "asd",
-    address: "",
-    phone: "",
-    email: "",
-    deliveryDate: "",
-    paymentMethod: "",
-  },
-  {
-    name: "2",
-    address: "",
-    phone: "",
-    email: "",
-    deliveryDate: "",
-    paymentMethod: "",
-  },
-];
+module.exports = [{"name":"asd","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"2","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"Angel Montoya","address":"Calle Amapolas","phone":"4421234312","email":"angel@gmail.com","deliveryDate":"2023-08-20","paymentMethod":"tarjeta"},{"name":"2Angel Montoya","address":"Calle Amapolas","phone":"4421234312","email":"angel@gmail.com","deliveryDate":"2023-08-20","paymentMethod":"tarjeta"},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""},{"name":"","address":"","phone":"","email":"","deliveryDate":"","paymentMethod":""}]
