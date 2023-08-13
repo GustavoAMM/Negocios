@@ -32,11 +32,50 @@ export function Home() {
     phone: "",
     email: "",
     deliveryDate: "",
-    paymentMethod: "",
+    paymentMethod: "efectivo",
+    product: "Mesa rectangular",
+    quantity: 1,
+    status: "Pendiente",
   });
+  const productos = [
+    {
+      id: 1,
+      name: "Mesa rectangular",
+      description: "Una mesa elegante y moderna para tu evento.",
+      price: "$20",
+    },
+    {
+      id: 2,
+      name: "Silla individual",
+      description: "Silla cómoda y clásica para tus invitados.",
+      price: "$10",
+    },
+    {
+      id: 3,
+      name: "Paquete de mesa y sillas",
+      description: "1 mesa, 10 sillas y 1 mantel.",
+      price: "$85",
+    },
+  ];
 
   const handleSubmit = async () => {
     try {
+      // Realiza una validación para verificar que todos los campos requeridos estén completos
+      if (
+        formData.name === "" ||
+        formData.address === "" ||
+        formData.phone === "" ||
+        formData.email === "" ||
+        formData.deliveryDate === "" ||
+        formData.paymentMethod === "" || 
+        formData.product === ""
+
+      ) {
+        // Si algún campo está vacío, muestra una alerta o realiza alguna acción
+        console.log("Completa todos los campos requeridos");
+        return;
+      }
+
       const response = await axios.post(
         "http://localhost:3001/add-order",
         formData
@@ -45,7 +84,6 @@ export function Home() {
         setShowAlert(true);
       } else {
         setShowErrorAlert(true);
-        onClose();
       }
       onClose();
     } catch (error) {
@@ -196,6 +234,7 @@ export function Home() {
                 <FormControl>
                   <FormLabel>Método de Pago</FormLabel>
                   <Select
+                    name="paymentMethod"
                     value={formData.paymentMethod}
                     onChange={(e) =>
                       setFormData({
@@ -211,6 +250,36 @@ export function Home() {
                     </option>
                   </Select>
                 </FormControl>
+              </GridItem>
+              <GridItem>
+                <FormControl>
+                  <FormLabel>Producto</FormLabel>
+                  <Select
+                    value={formData.product}
+                    onChange={(e) =>
+                      setFormData({ ...formData, product: e.target.value })
+                    }
+                  >
+                    {productos.map((producto) => (
+                      <option key={producto.id} value={producto.name}>
+                        {producto.name} - {producto.price}
+                      </option>
+                    ))}
+                  </Select>
+                </FormControl>
+              </GridItem>
+              <GridItem>
+                <FormControl>
+                  <FormLabel>Cantidad</FormLabel>
+                  <Input
+                  type="number"
+                  min={1}
+                  value={formData.quantity}
+                  onChange={(e) =>
+                    setFormData({ ...formData, quantity: e.target.value })
+                  }
+                />
+              </FormControl>
               </GridItem>
             </Grid>
           </ModalBody>

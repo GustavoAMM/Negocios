@@ -1,4 +1,3 @@
-// backend/server.js
 const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
@@ -12,27 +11,45 @@ app.use(cors());
 
 const dataFilePath = "./data/data.js";
 
-// Nuevo endpoint para agregar un pedido
+function generateUniqueId(existingIds) {
+  let id;
+  do {
+    id = Math.floor(Math.random() * 100000);
+  } while (existingIds.includes(id));
+  return id;
+}
+
 app.post("/add-order", (req, res) => {
   try {
     const newOrder = req.body;
     const currentData = require(dataFilePath);
+
+    // Generar un ID único
+    const existingIds = currentData.map(order => order.id);
+    const uniqueId = generateUniqueId(existingIds);
+
+    // Agregar el ID único al nuevo pedido
+    newOrder.id = uniqueId;
+
+    // Agregar el nuevo pedido al arreglo de pedidos
     currentData.push(newOrder);
+
+    // Escribir los datos actualizados en el archivo
     fs.writeFileSync(
       dataFilePath,
       `module.exports = ${JSON.stringify(currentData)}`,
       "utf-8"
     );
+
     res
       .status(200)
-      .json({ success: true, message: "Order added successfully." });
+      .json({ success: true, message: "Order added successfully.", id: uniqueId });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Error adding order." });
   }
 });
 
-// Nuevo endpoint para obtener todos los pedidos
 app.get("/get-orders", (req, res) => {
   try {
     const orders = require(dataFilePath);
@@ -45,7 +62,6 @@ app.get("/get-orders", (req, res) => {
   }
 });
 
-// Ruta para la autenticación
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
