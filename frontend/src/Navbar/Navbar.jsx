@@ -23,10 +23,10 @@ export function Navbar() {
                     </button>
                 </div>
                 <ul className={`md:flex ${isMenuOpen ? 'block' : 'hidden'} md:space-x-6 mt-4 md:mt-0`}>
-                    <li><a href="#" className="text-white hover:text-gray-300">Inicio</a></li>
-                    <li><a href="#" className="text-white hover:text-gray-300">Productos</a></li>
-                    <li><a href="#" className="text-white hover:text-gray-300">Servicios</a></li>
-                    <li><a href="#" className="text-white hover:text-gray-300">Contacto</a></li>
+                    <li><a href="/" className="text-white hover:text-gray-300">Inicio</a></li>
+                    <li><a href="#nosotros" className="text-white hover:text-gray-300">Nosotros</a></li>
+                    <li><a href="#productos" className="text-white hover:text-gray-300">Productos</a></li>
+                    <li><a href="#contacto" className="text-white hover:text-gray-300">Contacto</a></li>
                 </ul>
             </nav>
         </div>

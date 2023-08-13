@@ -99,7 +99,7 @@ export function Home() {
         </ButtonGroup>
       </div>
 
-      {/* condicionar alerta */}
+      {/* Alerta de success*/}
       {showAlert && (
         <div className="fixed top-0 right-0 m-8">
           <div className="bg-green-500 text-white font-bold rounded-t px-4 py-2">

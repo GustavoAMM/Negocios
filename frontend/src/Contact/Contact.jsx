@@ -2,7 +2,7 @@ import React from "react";
 
 export function Contact() {
   return (
-    <div className="bg-[#1F2937] py-10">
+    <div className="bg-[#1F2937] py-10" id="contacto">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-semibold mb-4 text-gray-800">
           Contáctanos

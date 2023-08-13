@@ -30,7 +30,7 @@ const products = [
 
 export function Products() {
   return (
-    <div className="bg-gray-100 py-10">
+    <div className="bg-gray-100 py-10" id="productos">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-semibold mb-4 text-gray-800">
           Nuestros Productos

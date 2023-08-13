@@ -3,7 +3,7 @@ import slideimg from "../../public/slideimg.jpeg";
 
 export function About() {
   return (
-    <div className="bg-gray-800 py-10">
+    <div className="bg-gray-800 py-10" id="nosotros">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-6 md:mb-0 flex justify-center">
           <img src={slideimg} alt="Acerca de Nosotros" className="rounded-lg shadow-lg max-w-[400px] h-auto" />
