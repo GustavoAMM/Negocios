@@ -78,6 +78,7 @@ export function Home() {
     <div
       className="bg-gradient-to-r from-purple-600 to-indigo-800 min-h-screen flex flex-col justify-center items-center overflow-hidden blur-background"
       style={{ backgroundImage: `url(${backgroundImage})` }}
+      id="home"
     >
       <div className="container mx-auto px-4 text-center bg-white bg-opacity-70 p-10 rounded-lg shadow-lg h-60">
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-6">

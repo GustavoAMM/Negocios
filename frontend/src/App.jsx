@@ -1,20 +1,18 @@
-import { Navbar } from "./Navbar/Navbar";
-import {Home } from "./Home/Home";
-import { About } from "./About/About";
-import {Products} from "./Products/Products";
-import { Contact } from "./Contact/Contact.jsx";
-import { Footer } from "./Footer/Footer";
+// App.jsx
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "../src/Navbar/Navbar";
+import { Cliente } from "./Cliente";
+import { Admin } from "./Admin/Admin";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Home />
-      <About />
-      <Products />
-      <Contact />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<Cliente />} />
+        <Route path="/admin" element={<Admin />} />
+      </Route>
+    </Routes>
   );
 }
 
