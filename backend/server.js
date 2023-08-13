@@ -45,6 +45,22 @@ app.get("/get-orders", (req, res) => {
   }
 });
 
+// Ruta para la autenticación
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const usersData = JSON.parse(fs.readFileSync('data/users.json', 'utf8'));
+  const users = usersData.users;
+
+  const user = users.find(user => user.email === email && user.password === password);
+
+  if (user) {
+    res.json({ success: true, message: 'Logged in successfully' });
+  } else {
+    res.status(401).json({ success: false, message: 'Invalid email or password' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
